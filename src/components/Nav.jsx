@@ -16,7 +16,7 @@ flex justify-center items-center rounded-b-md  text-purple-900 shadow-xl'>
 
 
  <form className='w-[60%] h-[60px] bg-white flex items-center px-5 gap-5 
- rounded-md shadow-blue-100 shadow-xl'>
+ rounded-md shadow-blue-100 shadow-md'>
 <FaSearch />
 <input type="text" placeholder='Search Items... ' className='w-full outline-none '/>
  </form>
