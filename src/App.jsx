@@ -1,11 +1,11 @@
 import React from 'react'
+import Home from './pages/Home'
 
 export default function App() {
   return (
-    <div className='text-red-700'>
+    <div >
       
-      <h1> hi </h1>
-<h2> this is from local </h2>
+<Home/>
     </div>
   )
 }
