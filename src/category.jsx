@@ -30,13 +30,13 @@ import { GiHamburger } from "react-icons/gi";
       {
         id : 6, 
         name : "pizza" ,
-        image : <GiFullPizza className="w-[60px] h-[60px] text-orange-800" />
+        image : <GiFullPizza className="w-[60px] h-[60px] text-purple-900" />
     },
     
      {
         id : 7, 
         name : "burger" ,
-        image : <GiHamburger className="w-[60px] h-[60px] text-orange-600" /> 
+        image : <GiHamburger className="w-[60px] h-[60px] text-purple-900" /> 
     },
     
 
