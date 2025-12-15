@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import categories from "../category";
 import Card from "../components/card";
 import { food_items } from "../food";
+import Footer from "../components/Footer";
 
 
 function Home(){
@@ -33,6 +34,7 @@ function Home(){
 
     </div>
 
+<Footer/>
         </div>
     )
 }
