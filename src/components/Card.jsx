@@ -6,7 +6,7 @@ import React from 'react'
 function Card({name , image , price , type}) {
   return (
    <div className='w-[300px] h-[400px] bg-white  rounded-lg p-3 flex flex-col gap-3 
-   shadow-lg'>
+   shadow-lg hover:border-2 border-green-300 '>
 
     <div className='w-[100%] h-[65%] overflow-hidden  '>
  <img src={ image} alt="image unable to load " className='object-cover rounded-lg'/>
@@ -25,7 +25,7 @@ function Card({name , image , price , type}) {
 </div>
 
 <button className='w-full p-4 bg-green-200 rounded-lg
-bg-green-300 text-gray-700 hover:bg-green-400 transition-all'> Add to dish </button>
+bg-green-500 text-white hover:bg-green-400 transition-all cursor-pointer'> Add to dish </button>
    </div>
 
 
