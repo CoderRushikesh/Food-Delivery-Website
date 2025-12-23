@@ -1,12 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext , useEffect} from 'react'
 import { MdFastfood } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 import { LuShoppingBag } from "react-icons/lu";
 import { dataContext } from '../context/UserContext';
-
+import { food_items } from '../food';
+// import { dataContext } from "../context/UserContext";
 function Nav() {
 
-  let  {input,setInput} = useContext(dataContext)
+  let  {input,setInput ,setCart , setShowCart, showCart} = useContext(dataContext)
+// let {input , setInput ,cate,setCate}=useContext(dataContext);
+
+//     useEffect(()=>{
+//      let newList =  food_items.filter((item)=> item.food_name.includes(input)
+//     ||item.food_name.toLowerCase().includes(input) )
+//       setCate(newList);
+//     },[input])
 
   return (
     <div className='w-full h-[100px] flex justify-between items-center
@@ -27,9 +35,11 @@ flex justify-center items-center rounded-b-md  text-purple-900 shadow-xl'>
  </form>
 
   <div className=' bg-white w-[60px] h-[60px] 
-flex justify-center items-center rounded-b-md  shadow-xl' >
-
-    <LuShoppingBag className='w-[30px] h-[30px] text-green-600'/>
+flex justify-center items-center rounded-b-md  shadow-xl relative cursor-pointer ' 
+onClick={()=>
+  setShowCart(true)
+} >
+    <LuShoppingBag className='w-[30px] h-[30px] text-green-600 cursor-pointer'/>
 </div>
 
 

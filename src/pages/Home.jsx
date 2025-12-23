@@ -5,10 +5,10 @@ import Card from "../components/card";
 import { food_items } from "../food";
 import Footer from "../components/Footer";
 import { dataContext } from "../context/UserContext";
-
+import { RxCross1 } from "react-icons/rx";
 
 function Home(){
-    let {input , setInput ,cate,setCate}=useContext(dataContext);
+    let {input , setInput ,cate,setCate ,showCart , setShowCart }=useContext(dataContext);
 
     useEffect(()=>{
      let newList =  food_items.filter((item)=> item.food_name.includes(input)
@@ -56,6 +56,22 @@ function Home(){
    <Card key={item.food_name} name={item.food_name} image={item.food_image} price={item.price}  type={item.food_type}/>
     );  
 })}
+
+
+<div >
+  
+  <div className={`w-[40vw] h-full fixed top-0 right-0
+   bg-white shadow-xl p-5  ${showCart ? "translate-x-0" : "translate-x-full"}`} >
+
+    <header className="w-[40vw] h-full flex justify-between p-3 ">
+        <span className="text-green-400 text-[18px] font-semibold "> Order Items </span>
+       <RxCross1   className=" w-10 h-8 text-red-400 text-[20px] font-semibold pr-5 cursor-pointer hover:text-gray-600 "
+       onClick={()=> setShowCart(false)}/> 
+    </header>
+  
+  </div>
+
+</div>
 
     </div>
 
