@@ -61,7 +61,7 @@ function Home(){
 
 <div >
   
-  <div className={`w-[40vw] h-[100%] fixed top-0 right-0
+  <div className={` w-full md:w-[40vw] h-[100%] fixed top-0 right-0
    bg-white shadow-xl p-6  ${showCart ? "translate-x-0" : "translate-x-full"}`} >
 
     <header className="w-[100%]  flex flex-row justify-between  p-1 ">

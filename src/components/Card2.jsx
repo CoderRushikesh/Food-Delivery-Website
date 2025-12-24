@@ -24,9 +24,9 @@ function Card2() {
        </div>
 
 
-       <div className='flex flxe-col justify-start items-end gap-2'>
+       <div className='flex flex-col  justify-start items-center gap-2'>
         <span className='text-xl text-green-400 font-semibold'> Rs 499/- </span>
-        <MdDelete className='  text-red-400' />
+        <MdDelete className=' w-[30px] h-[30px] text-red-400 cursor-pointer' />
           </div> 
 
     </div>
