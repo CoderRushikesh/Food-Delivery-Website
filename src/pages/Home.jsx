@@ -29,10 +29,10 @@ function Home(){
      
  }
 
-
-  let items = useSelector(state=>state)
-   console.log(items)
-
+let items = useSelector(state=>state.cart)
+  
+  //  console.log(items)
+   
 
     return (
         <div className="bg-slate-200 w-full min-h-screen">
@@ -75,8 +75,13 @@ function Home(){
        <RxCross1   className=" w-10 h-8 text-red-400 text-[20px] font-semibold pr-5 cursor-pointer hover:text-gray-600 "
        onClick={()=> setShowCart(false)}/> 
     </header>
-   <Card2/>
+   {/* <Card2/> */}
   
+  <div className="w-full mt-9 flex flex-col gap-8">
+    {items.map((item)=>(
+       <Card2 name={item.name} price={item.price} image={item.image} id={item.id} qty={item.qty} />
+    ))}
+  </div>
 
   </div>
 

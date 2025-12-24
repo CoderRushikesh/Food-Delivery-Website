@@ -30,7 +30,9 @@ function Card({name , image , price , type ,id }) {
 </div>
 
 <button className='w-full p-4 bg-green-200 rounded-lg
-bg-green-500 text-white hover:bg-green-400 transition-all cursor-pointer' onClick={()=>dispatch(AddItem({id:id}))}> Add to dish </button>
+bg-green-500 text-white hover:bg-green-400 transition-all cursor-pointer'
+ onClick={()=>dispatch(AddItem({ id:id , name:name , price:price, image:image , qty:1 }))}> 
+ Add to dish </button>
    </div>
 
 
