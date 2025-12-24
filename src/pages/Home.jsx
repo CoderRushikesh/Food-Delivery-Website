@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { dataContext } from "../context/UserContext";
 import { RxCross1 } from "react-icons/rx";
 import Card2 from "../components/Card2";
+import { useSelector } from "react-redux";
 
 function Home(){
     let {input , setInput ,cate,setCate ,showCart , setShowCart }=useContext(dataContext);
@@ -29,6 +30,10 @@ function Home(){
  }
 
 
+  let items = useSelector(state=>state)
+   console.log(items)
+
+
     return (
         <div className="bg-slate-200 w-full min-h-screen">
 
@@ -37,8 +42,9 @@ function Home(){
      {!input?  <div className="flex flex-wrap justify-center items-center gap-6
     w-full">
         {categories.map((item)=>(
-    
-            <div className=" flex flex-col items-center-safe
+       
+            <div key={item.name}
+             className=" flex flex-col items-center-safe
             w-[120px] h-[110px]  bg-white
             p-5 font-semibold text-gray600 rounded-lg shadow-blue-100 shadow-xl hover:bg-green-200 cursor-pointer
              transition-all duration-50  " onClick={()=> filter(item.name)}>
