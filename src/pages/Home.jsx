@@ -18,6 +18,8 @@ function Home(){
       setCate(newList);
     },[input])
 
+
+
  function filter(category){
    if(category==="All"){
     setCate(food_items);
@@ -30,7 +32,11 @@ function Home(){
  }
 
 let items = useSelector(state=>state.cart)
-  
+ let subtotal = items.reduce((total,item)=> total+item.price , 0)
+let deliveryFee = 20;
+let taxes = subtotal*0.5/100;
+let total = Math.floor(subtotal+deliveryFee+taxes);
+//  console.log(subtotal)
   //  console.log(items)
    
 
@@ -67,8 +73,8 @@ let items = useSelector(state=>state.cart)
 
 <div >
   
-  <div className={` w-full md:w-[40vw] h-[100%] fixed top-0 right-0
-   bg-white shadow-xl p-6  ${showCart ? "translate-x-0" : "translate-x-full"}`} >
+  <div className={` w-full md:w-[40vw] h-[100%] fixed top-0 right-0 flex flex-col items-center
+   bg-white shadow-xl p-6 overflow-auto ${showCart ? "translate-x-0" : "translate-x-full"}`} >
 
     <header className="w-[100%]  flex flex-row justify-between  p-1 ">
         <span className="text-green-400 text-[18px] font-semibold "> Order Items </span>
@@ -82,6 +88,36 @@ let items = useSelector(state=>state.cart)
        <Card2 name={item.name} price={item.price} image={item.image} id={item.id} qty={item.qty} />
     ))}
   </div>
+  
+  <div className="w-full border-b-2 border-t-2 border-gray-400 mt-7
+  fleex-col gap-4 p-8 ">
+
+  <div className="w-full flex justify-between items-center">
+    <span className="text-lg text-gray-600 font-semibold "> Subtotal </span>
+    <span className="text-green-400 font-semibold text-lg "> Rs{subtotal}/- </span>
+  </div>
+
+  <div className="w-full flex justify-between items-center">
+    <span className="text-lg text-gray-600 font-semibold "> Delivery </span>
+    <span className="text-green-400 font-semibold text-lg "> Rs{deliveryFee}/- </span>
+  </div>
+
+  <div className="w-full flex justify-between items-center">
+    <span className="text-lg text-gray-600 font-semibold "> Taxes </span>
+    <span className="text-green-400 font-semibold text-lg "> Rs{taxes}/- </span>
+  </div>
+  
+  </div>
+ <div className="w-full flex justify-between items-center p-9">
+    <span className="text-2xl text-gray-600 font-semibold "> Total </span>
+    <span className="text-green-400 font-semibold text-2xl "> Rs{total}/- </span>
+  </div>
+
+  <button className="w-[80%] p-4 bg-green-200 rounded-lg flex justify-center items-center
+bg-green-500 text-white hover:bg-green-400 transition-all cursor-pointer">
+    Place Order 
+  </button>
+  
 
   </div>
 
